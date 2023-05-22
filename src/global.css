@@ -69,3 +69,14 @@ h1,
 p {
   margin-bottom: 1rem;
 }
+
+.btn {
+  @apply bg-white py-0.5 px-5 border border-black text-base hover:bg-contrast hover:text-white focus:bg-contrast focus:text-white cursor-pointer w-fit transition-all font-semibold rounded-lg;
+}
+.btn-contrast {
+  @apply text-white bg-contrast hover:bg-brand focus:bg-brand;
+}
+
+.btn-brand {
+  @apply bg-brand;
+}
