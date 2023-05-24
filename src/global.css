@@ -70,6 +70,15 @@ p {
   margin-bottom: 1rem;
 }
 
+.grid-container {
+  width: 100%;
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  place-items: center;
+  grid-gap: 15px;
+}
+
 .btn {
   @apply bg-white py-0.5 px-5 border border-black text-base hover:bg-contrast hover:text-white focus:bg-contrast focus:text-white cursor-pointer w-fit transition-all font-semibold rounded-lg;
 }

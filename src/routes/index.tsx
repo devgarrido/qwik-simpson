@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead, Link } from "@builder.io/qwik-city";
-import { Logo } from "~/components/logo/logo";
+import { Logo } from "~/components/icons/logo";
 
 export default component$(() => {
   return (
@@ -44,11 +44,54 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "The Simpsons App",
+  title: "Inicio - The Simpsons App",
   meta: [
     {
       name: "description",
       content: "Página de inicio de la app The Simpsons Quote",
+    },
+    {
+      name: "og:title",
+      content: "The Simpsons Quote Application",
+    },
+    {
+      name: "og:description",
+      content:
+        "Página de inicio de la aplicación The Simpsons Quote Application",
+    },
+    {
+      name: "og:image",
+      content: "https://the-simpsons-qwik.vercel.app/img/thumbnail.png",
+    },
+    {
+      name: "og:url",
+      content: "https://the-simpsons-qwik.vercel.app/",
+    },
+    {
+      name: "keywords",
+      content:
+        "The Simpsons, Simpsons Quote, App Simpsons, Simpsons Qwik Quote",
+    },
+    {
+      name: "author",
+      content: "Antonio Garrido",
+    },
+    {
+      name: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      name: "twitter:title",
+      content: "The Simpsons Quote Application",
+    },
+    {
+      name: "twitter:description",
+      content:
+        "Página de inicio de la aplicación The Simpsons Quote Application",
+    },
+    {
+      name: "twitter:image",
+      content: "https://the-simpsons-qwik.vercel.app/img/thumbnail.png",
     },
   ],
 };
