@@ -20,11 +20,11 @@ export const useCharacters = routeLoader$(async () => {
 });
 
 export default component$(() => {
-  const { value: characters } = useCharacters();
-  const filteredCharacteres = getDifferentFilteredCharacters(characters);
-
   const characterSelected = useSignal({});
   const nav = useNavigate();
+
+  const { value: characters } = useCharacters();
+  const filteredCharacteres = getDifferentFilteredCharacters(characters);
 
   // function para filtrar : 1- que miren a la derecha y 2-que no se repitan.
   function getDifferentFilteredCharacters(characters: Character[]) {
@@ -70,7 +70,7 @@ export default component$(() => {
               </button>
               <figcaption class="text-sm">{user.character}</figcaption>
             </figure>
-            {characterSelected.value == user && (
+            {characterSelected.value == user ? (
               <div class="z-10 fixed flex flex-col items-center justify-center inset-0 bg-black bg-opacity-75 transition-opacity">
                 <div class="relative pt-20 px-12 pb-12 bg-white max-w-[300px] w-full">
                   <button
@@ -86,7 +86,7 @@ export default component$(() => {
                   </blockquote>
                 </div>
               </div>
-            )}
+            ) : null}
           </li>
         ))}
       </ul>
