@@ -1,5 +1,10 @@
 import { component$, useSignal } from "@builder.io/qwik";
-import { type DocumentHead, Link, routeLoader$ } from "@builder.io/qwik-city";
+import {
+  type DocumentHead,
+  Link,
+  routeLoader$,
+  useNavigate,
+} from "@builder.io/qwik-city";
 import { fetchSimpson } from "~/api/fetchSimpsons";
 import Container from "~/components/container";
 import { IconQuote } from "~/components/icons/icon-quote";
@@ -19,6 +24,7 @@ export default component$(() => {
   const filteredCharacteres = getDifferentFilteredCharacters(characters);
 
   const characterSelected = useSignal({});
+  const nav = useNavigate();
 
   // function para filtrar : 1- que miren a la derecha y 2-que no se repitan.
   function getDifferentFilteredCharacters(characters: Character[]) {
@@ -84,7 +90,7 @@ export default component$(() => {
           </li>
         ))}
       </ul>
-      <Link reload class="btn btn-brand">
+      <Link onClick$={() => nav()} class="btn btn-brand">
         New Quotes
       </Link>
     </Container>
